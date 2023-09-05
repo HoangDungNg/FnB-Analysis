@@ -1,3 +1,71 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "next/core-web-vitals",
+    "plugin:prettier/recommended"
+  ],
+  "overrides": [
+    {
+      "files": ["*.js", "*.jsx", "*.ts", "*.tsx"],
+      "rules": {
+        "simple-import-sort/imports": [
+          "error",
+          {
+            "groups": [
+              // Packages `react` related packages and side effect imports come first.
+              ["^react", "^@?\\w", "^\\u0000"],
+              // Internal packages.
+              [
+                "^(@|components)(/.*|$)",
+                "^(@|router)(/.*|$)",
+                "^(@|pages)(/.*|$)",
+                "^(@|hooks)(/.*|$)",
+                "^(@|layout)(/.*|$)",
+                "^(@|utils)(/.*|$)",
+                "^(@|services)(/.*|$)",
+                "^(@|config)(/.*|$)",
+                "^(@|context)(/.*|$)",
+                "^(@|assets)(/.*|$)",
+                "^(@|types)(/.*|$)",
+                "^(@|theme)(/.*|$)",
+                "^(@|styles)(/.*|$)"
+              ],
+              // Parent imports. Put `..` last.
+              ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+              // Other relative imports. Put same-folder imports and `.` last.
+              ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+              // Style imports.
+              ["^.+\\.?(css)$"]
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "simple-import-sort", "unused-imports", "prettier", "react-hooks"],
+  "rules": {
+    "prettier/prettier": "off",
+    "unused-imports/no-unused-imports": "warn",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ]
+  }
 }
