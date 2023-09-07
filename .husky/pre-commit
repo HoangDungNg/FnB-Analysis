@@ -7,8 +7,8 @@ echo 'please be patient, this may take a while...'
 # Check Git user email
 GIT_USER_EMAIL=$(git config user.email)
 
-if [[ "$GIT_USER_EMAIL" == *"@nexondv.com"* ]]; then
-  echo '🔨❌ Oops! Your Git user email contains "@nexondv.com" 🔨❌. 
+if [[ "$GIT_USER_EMAIL" == *"@companyemail.com"* ]]; then
+  echo '🔨❌ Oops! Your Git user email contains "@companyemail.com" 🔨❌. 
               Please change to your personal email '
   false
 fi
