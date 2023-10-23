@@ -20,6 +20,9 @@ const config: Config = {
       },
       height: {
         half: '50%'
+      },
+      fontFamily: {
+        lobster: ['Lobster Two', 'sans']
       }
     }
   },

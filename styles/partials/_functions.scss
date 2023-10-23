@@ -1,0 +1,7 @@
+@function space($value) {
+  @return $value * 4 * 0.0625rem;
+}
+
+@function rem($value) {
+  @return $value * 0.0625rem;
+}

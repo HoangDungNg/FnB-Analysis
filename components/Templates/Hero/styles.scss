@@ -1,0 +1,73 @@
+@use '@styles' as *;
+
+@layer components {
+  .video-section {
+    @apply w-half rounded-t-half absolute;
+    left: 41.2%;
+    top: 0;
+    transform: translateY(50%);
+  }
+  .menu-inner {
+    @apply flex flex-col border-4 border-white rounded-md items-center;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+
+  display: flex;
+}
+
+.food-cover {
+  position: absolute;
+  width: 70%;
+  right: 0;
+  top: 0;
+}
+
+.light {
+  animation: shining 3s ease;
+  @keyframes shining {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+.title-group {
+  * {
+    color: #d1cdcd;
+    text-shadow:
+      1px 0.5px 1px #919191,
+      1px 1px 1px #919191,
+      1px 1.5px 1px #919191,
+      1px 2px 1px #919191,
+      1px 2.5px 1px #919191,
+      1px 3px 1px #919191,
+      1px 3.5px 1px #919191,
+      1px 4px 1px #919191,
+      1px 4.5px 1px #919191,
+      1px 5px 1px #919191,
+      1px 7px 6px rgba(239, 239, 239, 0.2),
+      1px 9px 6px rgba(239, 239, 239, 0.1),
+      1px 12px 6px rgba(239, 239, 239, 0.1),
+      1px 14px 6px rgba(239, 239, 239, 0.2);
+  }
+  *:nth-child(3) {
+    color: #f1f1f1;
+  }
+}
+.menu-wrapper {
+  width: 80%;
+  height: 60vh;
+  background-color: #eecad8;
+  padding: space(10);
+}
