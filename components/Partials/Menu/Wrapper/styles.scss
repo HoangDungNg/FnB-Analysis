@@ -1,0 +1,22 @@
+@use '@styles' as *;
+
+@layer components {
+  .menu-inner {
+    @apply flex flex-col border-4 border-white rounded-md items-center;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.menu-wrapper {
+  width: 80%;
+  height: 50%;
+  background-color: #eecad8;
+  padding: space(10);
+}
+
+.line-break {
+  width: 80%;
+  border-top: 2px dotted #000;
+  margin: rem(14) 0;
+}
