@@ -1,26 +1,40 @@
 import React from 'react';
-import { IconCoverFood } from '@assets/icons';
+import { IconCoverFood, IconFlower, IconPizza, IconPlate, IconRiceRecipe, IconSteak } from '@assets/icons';
 import { Menu } from '@components';
+import { menuItems1, menuItems2 } from '@config';
+import { rem } from '@util';
 
 import './styles.scss';
 
 const Hero: React.FC = () => {
-  const menuItems1 = [
-    { title: 'Current Hot Trends' },
-    { title: 'Restaurant List' },
-    { title: 'Searching' },
-    { title: 'Analysis' }
-  ];
-  const menuItems2 = [
-    { title: 'Statistic 1', disable: true },
-    { title: 'Statistic 2', disable: true },
-    { title: '...', disable: true }
-  ];
   return (
     <div className='container'>
       <div className='text-wrapper'>
         <div className='title-group'>
-          <h3 className='text-6xl font-bold'>Food & Beverage</h3>
+          <h3 className='text-6xl font-bold flex'>
+            F
+            <span className='flip block overflow-hidden'>
+              <span className='block'>o</span>
+              <span className='block'>
+                <IconRiceRecipe width={rem(40)} height={rem(40)} />
+              </span>
+              <span className='block'>
+                <IconPlate width={rem(40)} height={rem(40)} />
+              </span>
+              <span className='block'>o</span>
+            </span>
+            <span className='flip flip2 block overflow-hidden'>
+              <span className='block'>o</span>
+              <span className='block'>
+                <IconPizza width={rem(40)} height={rem(40)} />
+              </span>
+              <span className='block'>
+                <IconSteak width={rem(40)} height={rem(40)} />
+              </span>
+              <span className='block'>o</span>
+            </span>
+            d & Beverage
+          </h3>
           <h3 className='text-6xl font-bold'>Restaurants</h3>
           <h3 className='text-9xl font-bold'>Analysis</h3>
         </div>
@@ -38,10 +52,13 @@ const Hero: React.FC = () => {
           </video>
         </section>
         <span className='food-cover'>
-          <IconCoverFood width={'100%'} height={'100%'} />
+          <IconCoverFood width='100%' height='100%' />
         </span>
-        <div>
-          <button>Go to Hot Trends</button>
+        <div className='w-full text-center self-end mb-14 text-black'>
+          <button className='custom-button'>
+            <span className='block w-full z-10 relative'>Summarized Board</span>
+            <IconFlower className='absolute z-20 -top-1 right-0' />
+          </button>
         </div>
       </div>
     </div>
